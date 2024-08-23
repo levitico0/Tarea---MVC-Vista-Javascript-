@@ -1,0 +1,118 @@
+body {
+    font-family: 'Courier New', monospace; 
+    margin: 20px;
+    font-size: 20px;
+    background: #070505;
+}
+input, textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px; 
+    font-size: 20px; /
+}
+#charCount {
+    text-align: right;
+    font-size: 14px;
+    color: #555;
+}
+button {
+    padding: 8px;
+    width: 100%;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #f4f4f4;
+    margin: 10px 0;
+    padding: 15px; 
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    display: flex; 
+    align-items: center; 
+}
+li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #3498db; 
+    z-index: 1;
+    transition: width 0.3s ease;
+}
+li:hover::before {
+    width: 100%;
+}
+li a {
+    position: relative;
+    z-index: 2;
+    color: #444;
+    text-decoration: none;
+    display: block;
+    flex-grow: 1; /* Permite al contenido crecer y ocupar el espacio disponible */
+}
+li button {
+    position: relative;
+    z-index: 2;
+    width: auto;
+    padding: 4px 8px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+   
+}
+li:nth-child(1)::before {
+    background-color: #db3434;
+}
+li:nth-child(2)::before {
+    background-color: #0aa1e7;
+}
+li:nth-child(3)::before {
+    background-color: #f0776c;
+}
+li:nth-child(4)::before {
+    background-color: #1abc9c;
+}
+.btn-agregar {
+    background: rgb(0, 0, 0);
+    color: azure;
+    font-size: 30px;
+    position: relative;
+    padding: 25px 50px; 
+}
+.btn-agregar:hover::before {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: -10x; 
+    right: -10px; 
+    bottom: -100px; 
+    z-index: -1;
+    width: calc(100% + 8px); 
+    height: calc(100% + 8px); 
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 200px; 
+    filter: blur(25px);
+    animation: glowing 20s linear infinite;
+}
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
